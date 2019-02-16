@@ -34,7 +34,7 @@ set src/main/resources/application.properties
 # ex postgresql
 spring.datasource.driver-class-name=org.postgresql.Driver
 spring.datasource.url= jdbc:postgresql://127.0.0.1:5432/dbname?charSet=UTF-8&prepareThreshold=1 
-spring.datasource.username=dbname
+spring.datasource.username=username
 spring.datasource.password=password
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation: true
 ```
