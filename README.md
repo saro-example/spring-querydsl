@@ -1,9 +1,9 @@
 # spring-querydsl
 
-# step 1
-## create data
+# STEP 1
+## init data
 ```
--- ex postgresql
+/* ex) postgresql */
 CREATE TABLE account (
 	no bigserial NOT NULL,
 	account varchar(64) NOT NULL,
@@ -27,9 +27,8 @@ insert into account_role values (currval('account_no_seq'), 'master');
 insert into account_role values (currval('account_no_seq'), 'admin');
 ```
 
-# step 2
-## application.
-set src/main/resources/application.properties
+# STEP 2
+## set application.properties
 ```
 # ex postgresql
 spring.datasource.driver-class-name=org.postgresql.Driver
@@ -39,10 +38,20 @@ spring.datasource.password=password
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation: true
 ```
 
-# step 3
+# STEP 3
 ## build
 ```
 gradle task :compileQuerydsl
 # apply source folder src/main/generated
 ```
 
+# STEP 4
+## execute
+```
+-- list
+http://localhost:8080/account/0
+-- insert
+http://localhost:8080/account/save/ac/myaccount/pw/mypassword
+-- search
+http://localhost:8080/find/sa
+```
